@@ -334,7 +334,7 @@ Then it uses the `super` keyword to invoke the parent implementation of the `mak
 
 > The `super` keyword is like the `this` keyword, except the object refers to itself _as its parent type_ instead of its own type.
 
-In the example below, the `super.makeComment(message)` invokes the `makeComment(String)` method from the parent type, i.e., the `Socializer` interface.
+In the example below, the `Socializer.super.makeComment(message)` invokes the `makeComment(String)` method from the parent type, i.e., the `Socializer` interface.
 
 ```java
 public class Referee implements Socializer {
@@ -353,7 +353,7 @@ public class Referee implements Socializer {
   @Override
   public void makeComment(String message) {
     System.out.print("WHISTLE! "); // Referee adds its own behaviour here
-    super.makeComment(message); // Referee invokes the Socializer's default behaviour
+    Socializer.super.makeComment(message); // Referee invokes the Socializer's default behaviour
   }
 }
 ```
